@@ -29,5 +29,17 @@ namespace Catalog.API.Controllers.CatalogController
             var result = await _mediator.Send(new GetAllCatalogsQuery());
             return Ok(result);
         }
+        [HttpPut]
+        public async Task<IActionResult> UpdateCatalog(UpdateCatalogCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+        [HttpDelete]
+        public async Task<IActionResult> DeleteCatalog(DeleteCatalogCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
     }
 }
