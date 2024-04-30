@@ -72,7 +72,7 @@
 
 
     {
-      "DownstreamPathTemplate": "/WeatherForecast",
+      "DownstreamPathTemplate": "/api/Discounts/GetAllDiscount",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -80,8 +80,58 @@
           "Port": 7160
         }
       ],
-      "UpstreamPathTemplate": "/WeatherForecast",
+      "UpstreamPathTemplate": "/api/Discounts/GetAllDiscount",
       "UpstreamHttpMethod": [ "Get" ]
+    },
+
+
+
+
+    {
+      "DownstreamPathTemplate": "/api/Discounts/CreateDiscount",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7160
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Discounts/CreateDiscount",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+
+
+
+
+
+
+    {
+      "DownstreamPathTemplate": "/api/Discounts/UpdateDiscount",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7160
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Discounts/UpdateDiscount",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+
+
+
+
+    {
+      "DownstreamPathTemplate": "/api/Discounts/DeleteDiscount",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7160
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Discounts/DeleteDiscount",
+      "UpstreamHttpMethod": [ "Delete" ]
     }
 
 

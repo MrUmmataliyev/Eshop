@@ -1,4 +1,5 @@
-
+using Discount.Application;
+using Discount.Infrastructure;
 namespace Discount.API
 {
     public class Program
@@ -13,6 +14,8 @@ namespace Discount.API
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddDiscountApplicationDependencyInjection();
+            builder.Services.AddDiscountInfrastructureDepencyInjection(builder.Configuration);
 
             var app = builder.Build();
 
