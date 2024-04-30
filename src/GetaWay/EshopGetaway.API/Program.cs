@@ -1,8 +1,8 @@
 
-using Catalog.Application;
-using Catalog.Infrastructure;
+using Ocelot.DependencyInjection;
+using Ocelot.Middleware;
 
-namespace Catalog.API
+namespace EshopGetaway.API
 {
     public class Program
     {
@@ -11,9 +11,8 @@ namespace Catalog.API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
-            builder.Services.AddCatalogApplicationDependencyInjection();
-            builder.Services.AddCatalogInfrastructureDependencyInjetion(builder.Configuration);
+            builder.Configuration.AddJsonFile("ocelot.json");
+            builder.Services.AddOcelot();
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -27,7 +26,7 @@ namespace Catalog.API
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
+            app.UseOcelot();
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
