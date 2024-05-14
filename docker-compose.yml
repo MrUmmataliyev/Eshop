@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  eshopgetaway.api:
+    image: ${DOCKER_REGISTRY-}eshopgetawayapi
+    build:
+      context: .
+      dockerfile: src/GetaWay/EshopGetaway.API/Dockerfile
+
+  catalog.api:
+    image: ${DOCKER_REGISTRY-}catalogapi
+    build:
+      context: .
+      dockerfile: src/Catalog/Catalog.API/Dockerfile
+
+  discount.api:
+    image: ${DOCKER_REGISTRY-}discountapi
+    build:
+      context: .
+      dockerfile: src/Discount/Discount.API/Dockerfile
+
+

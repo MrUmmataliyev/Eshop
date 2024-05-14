@@ -1,4 +1,7 @@
 
+using Shoppingcarts.Application;
+using Shoppingcarts.Infrastructure;
+
 namespace Shoppingcarts.API
 {
     public class Program
@@ -8,7 +11,8 @@ namespace Shoppingcarts.API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
+            builder.Services.AddShoppingCartApplicationDependencyInjection();
+            builder.Services.AddShoppingCartsInfrastructureDependencyInjection(builder.Configuration);
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
